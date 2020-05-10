@@ -1,0 +1,2487 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20194.19.1010.1202                               -->
+<workbook original-version='18.1' source-build='2019.4.0 (20194.19.1010.1202)' source-platform='mac' version='18.1' xml:base='https://public.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AutoCreateAndUpdateDSDPhoneLayouts ignorable='true' predowngraded='true' />
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <repository-location id='Studomes-HomesforStudents' path='/workbooks' revision='1.0' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Studomes.Property+ (BUDT758_DB_0503_08)' inline='true' name='federated.1l40j2e14uf5ww1bdur9x1y7jyx5' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='mssqllab.rhsmith.umd.edu,9758' name='sqlserver.0jddhv50zfwvmh1a0g7570khgkwn'>
+            <connection authentication='sqlserver' class='sqlserver' dbname='BUDT758_DB_0503_08' minimum-driver-version='SQL Server Native Client 10.0' odbc-native-protocol='yes' one-time-sql='' port='0' server='mssqllab.rhsmith.umd.edu,9758' username='BUDT758_Student_154' workgroup-auth-mode='as-is' />
+          </named-connection>
+        </named-connections>
+        <relation join='full' type='join'>
+          <clause type='join'>
+            <expression op='AND'>
+              <expression op='='>
+                <expression op='[Studomes.Customer].[cID]' />
+                <expression op='[Studomes.Lease].[cID]' />
+              </expression>
+              <expression op='='>
+                <expression op='[Studomes.Owner].[oID]' />
+                <expression op='[Studomes.Lease].[oID]' />
+              </expression>
+              <expression op='='>
+                <expression op='[Studomes.Property].[pID]' />
+                <expression op='[Studomes.Lease].[pID]' />
+              </expression>
+            </expression>
+          </clause>
+          <relation join='full' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='[Studomes.Include].[amyID]' />
+                <expression op='[Studomes.Amenity].[amyID]' />
+              </expression>
+            </clause>
+            <relation join='full' type='join'>
+              <clause type='join'>
+                <expression op='='>
+                  <expression op='[Studomes.Property].[pID]' />
+                  <expression op='[Studomes.Include].[pID]' />
+                </expression>
+              </clause>
+              <relation join='full' type='join'>
+                <clause type='join'>
+                  <expression op='='>
+                    <expression op='[Studomes.Facilitate].[agID]' />
+                    <expression op='[Studomes.Agent].[agID]' />
+                  </expression>
+                </clause>
+                <relation join='full' type='join'>
+                  <clause type='join'>
+                    <expression op='AND'>
+                      <expression op='='>
+                        <expression op='[Studomes.Property].[pID]' />
+                        <expression op='[Studomes.Facilitate].[pID]' />
+                      </expression>
+                      <expression op='='>
+                        <expression op='[Studomes.Owner].[oID]' />
+                        <expression op='[Studomes.Facilitate].[oID]' />
+                      </expression>
+                    </expression>
+                  </clause>
+                  <relation join='full' type='join'>
+                    <clause type='join'>
+                      <expression op='='>
+                        <expression op='[Studomes.Own].[oID]' />
+                        <expression op='[Studomes.Owner].[oID]' />
+                      </expression>
+                    </clause>
+                    <relation join='full' type='join'>
+                      <clause type='join'>
+                        <expression op='='>
+                          <expression op='[Studomes.Property].[pID]' />
+                          <expression op='[Studomes.Own].[pID]' />
+                        </expression>
+                      </clause>
+                      <relation join='full' type='join'>
+                        <clause type='join'>
+                          <expression op='='>
+                            <expression op='[Studomes.Apply].[cID]' />
+                            <expression op='[Studomes.Customer].[cID]' />
+                          </expression>
+                        </clause>
+                        <relation join='full' type='join'>
+                          <clause type='join'>
+                            <expression op='='>
+                              <expression op='[Studomes.Property].[pID]' />
+                              <expression op='[Studomes.Apply].[pID]' />
+                            </expression>
+                          </clause>
+                          <relation join='full' type='join'>
+                            <clause type='join'>
+                              <expression op='='>
+                                <expression op='[Studomes.Belong].[tID]' />
+                                <expression op='[Studomes.Type].[tID]' />
+                              </expression>
+                            </clause>
+                            <relation join='full' type='join'>
+                              <clause type='join'>
+                                <expression op='='>
+                                  <expression op='[Studomes.Property].[pID]' />
+                                  <expression op='[Studomes.Belong].[pID]' />
+                                </expression>
+                              </clause>
+                              <relation connection='sqlserver.0jddhv50zfwvmh1a0g7570khgkwn' name='Studomes.Property' table='[dbo].[Studomes.Property]' type='table' />
+                              <relation connection='sqlserver.0jddhv50zfwvmh1a0g7570khgkwn' name='Studomes.Belong' table='[dbo].[Studomes.Belong]' type='table' />
+                            </relation>
+                            <relation connection='sqlserver.0jddhv50zfwvmh1a0g7570khgkwn' name='Studomes.Type' table='[dbo].[Studomes.Type]' type='table' />
+                          </relation>
+                          <relation connection='sqlserver.0jddhv50zfwvmh1a0g7570khgkwn' name='Studomes.Apply' table='[dbo].[Studomes.Apply]' type='table' />
+                        </relation>
+                        <relation connection='sqlserver.0jddhv50zfwvmh1a0g7570khgkwn' name='Studomes.Customer' table='[dbo].[Studomes.Customer]' type='table' />
+                      </relation>
+                      <relation connection='sqlserver.0jddhv50zfwvmh1a0g7570khgkwn' name='Studomes.Own' table='[dbo].[Studomes.Own]' type='table' />
+                    </relation>
+                    <relation connection='sqlserver.0jddhv50zfwvmh1a0g7570khgkwn' name='Studomes.Owner' table='[dbo].[Studomes.Owner]' type='table' />
+                  </relation>
+                  <relation connection='sqlserver.0jddhv50zfwvmh1a0g7570khgkwn' name='Studomes.Facilitate' table='[dbo].[Studomes.Facilitate]' type='table' />
+                </relation>
+                <relation connection='sqlserver.0jddhv50zfwvmh1a0g7570khgkwn' name='Studomes.Agent' table='[dbo].[Studomes.Agent]' type='table' />
+              </relation>
+              <relation connection='sqlserver.0jddhv50zfwvmh1a0g7570khgkwn' name='Studomes.Include' table='[dbo].[Studomes.Include]' type='table' />
+            </relation>
+            <relation connection='sqlserver.0jddhv50zfwvmh1a0g7570khgkwn' name='Studomes.Amenity' table='[dbo].[Studomes.Amenity]' type='table' />
+          </relation>
+          <relation connection='sqlserver.0jddhv50zfwvmh1a0g7570khgkwn' name='Studomes.Lease' table='[dbo].[Studomes.Lease]' type='table' />
+        </relation>
+        <cols>
+          <map key='[agContact]' value='[Studomes.Agent].[agContact]' />
+          <map key='[agEmail]' value='[Studomes.Agent].[agEmail]' />
+          <map key='[agID (Studomes.Agent)]' value='[Studomes.Agent].[agID]' />
+          <map key='[agID]' value='[Studomes.Facilitate].[agID]' />
+          <map key='[agName]' value='[Studomes.Agent].[agName]' />
+          <map key='[amyID (Studomes.Amenity)]' value='[Studomes.Amenity].[amyID]' />
+          <map key='[amyID]' value='[Studomes.Include].[amyID]' />
+          <map key='[amyName]' value='[Studomes.Amenity].[amyName]' />
+          <map key='[appEndDate]' value='[Studomes.Apply].[appEndDate]' />
+          <map key='[appStartDate]' value='[Studomes.Apply].[appStartDate]' />
+          <map key='[cContact]' value='[Studomes.Customer].[cContact]' />
+          <map key='[cEmail]' value='[Studomes.Customer].[cEmail]' />
+          <map key='[cID (Studomes.Customer)]' value='[Studomes.Customer].[cID]' />
+          <map key='[cID (Studomes.Lease)]' value='[Studomes.Lease].[cID]' />
+          <map key='[cID]' value='[Studomes.Apply].[cID]' />
+          <map key='[cName]' value='[Studomes.Customer].[cName]' />
+          <map key='[leaseDate]' value='[Studomes.Lease].[leaseDate]' />
+          <map key='[leaseDuration]' value='[Studomes.Lease].[leaseDuration]' />
+          <map key='[leaseSecurityDeposit]' value='[Studomes.Lease].[leaseSecurityDeposit]' />
+          <map key='[oContact]' value='[Studomes.Owner].[oContact]' />
+          <map key='[oEmail]' value='[Studomes.Owner].[oEmail]' />
+          <map key='[oID (Studomes.Facilitate)]' value='[Studomes.Facilitate].[oID]' />
+          <map key='[oID (Studomes.Lease)]' value='[Studomes.Lease].[oID]' />
+          <map key='[oID (Studomes.Owner)]' value='[Studomes.Owner].[oID]' />
+          <map key='[oID]' value='[Studomes.Own].[oID]' />
+          <map key='[oName]' value='[Studomes.Owner].[oName]' />
+          <map key='[oOrganization]' value='[Studomes.Owner].[oOrganization]' />
+          <map key='[oWebsite]' value='[Studomes.Owner].[oWebsite]' />
+          <map key='[pAddress]' value='[Studomes.Property].[pAddress]' />
+          <map key='[pAreaSqFt]' value='[Studomes.Property].[pAreaSqFt]' />
+          <map key='[pCity]' value='[Studomes.Property].[pCity]' />
+          <map key='[pID (Studomes.Apply)]' value='[Studomes.Apply].[pID]' />
+          <map key='[pID (Studomes.Belong)]' value='[Studomes.Belong].[pID]' />
+          <map key='[pID (Studomes.Facilitate)]' value='[Studomes.Facilitate].[pID]' />
+          <map key='[pID (Studomes.Include)]' value='[Studomes.Include].[pID]' />
+          <map key='[pID (Studomes.Lease)]' value='[Studomes.Lease].[pID]' />
+          <map key='[pID (Studomes.Own)]' value='[Studomes.Own].[pID]' />
+          <map key='[pID]' value='[Studomes.Property].[pID]' />
+          <map key='[pName]' value='[Studomes.Property].[pName]' />
+          <map key='[pNumberOfBathroom]' value='[Studomes.Property].[pNumberOfBathroom]' />
+          <map key='[pNumberOfBedroom]' value='[Studomes.Property].[pNumberOfBedroom]' />
+          <map key='[pRent]' value='[Studomes.Property].[pRent]' />
+          <map key='[pState]' value='[Studomes.Property].[pState]' />
+          <map key='[tCategory]' value='[Studomes.Type].[tCategory]' />
+          <map key='[tID (Studomes.Type)]' value='[Studomes.Type].[tID]' />
+          <map key='[tID]' value='[Studomes.Belong].[tID]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>pID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[pID]</local-name>
+            <parent-name>[Studomes.Property]</parent-name>
+            <remote-alias>pID</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pName</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[pName]</local-name>
+            <parent-name>[Studomes.Property]</parent-name>
+            <remote-alias>pName</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>20</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pAddress</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[pAddress]</local-name>
+            <parent-name>[Studomes.Property]</parent-name>
+            <remote-alias>pAddress</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pCity</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[pCity]</local-name>
+            <parent-name>[Studomes.Property]</parent-name>
+            <remote-alias>pCity</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>20</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pState</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[pState]</local-name>
+            <parent-name>[Studomes.Property]</parent-name>
+            <remote-alias>pState</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>20</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pRent</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[pRent]</local-name>
+            <parent-name>[Studomes.Property]</parent-name>
+            <remote-alias>pRent</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pNumberOfBedroom</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[pNumberOfBedroom]</local-name>
+            <parent-name>[Studomes.Property]</parent-name>
+            <remote-alias>pNumberOfBedroom</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pNumberOfBathroom</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[pNumberOfBathroom]</local-name>
+            <parent-name>[Studomes.Property]</parent-name>
+            <remote-alias>pNumberOfBathroom</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pAreaSqFt</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[pAreaSqFt]</local-name>
+            <parent-name>[Studomes.Property]</parent-name>
+            <remote-alias>pAreaSqFt</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[pID (Studomes.Belong)]</local-name>
+            <parent-name>[Studomes.Belong]</parent-name>
+            <remote-alias>pID</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[tID]</local-name>
+            <parent-name>[Studomes.Belong]</parent-name>
+            <remote-alias>tID</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[tID (Studomes.Type)]</local-name>
+            <parent-name>[Studomes.Type]</parent-name>
+            <remote-alias>tID</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>tCategory</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[tCategory]</local-name>
+            <parent-name>[Studomes.Type]</parent-name>
+            <remote-alias>tCategory</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[pID (Studomes.Apply)]</local-name>
+            <parent-name>[Studomes.Apply]</parent-name>
+            <remote-alias>pID</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[cID]</local-name>
+            <parent-name>[Studomes.Apply]</parent-name>
+            <remote-alias>cID</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>appStartDate</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[appStartDate]</local-name>
+            <parent-name>[Studomes.Apply]</parent-name>
+            <remote-alias>appStartDate</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_DATE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_DATE&quot;</attribute>
+              <attribute datatype='boolean' name='TypeIsDateTime2orDate'>true</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>appEndDate</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[appEndDate]</local-name>
+            <parent-name>[Studomes.Apply]</parent-name>
+            <remote-alias>appEndDate</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_DATE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_DATE&quot;</attribute>
+              <attribute datatype='boolean' name='TypeIsDateTime2orDate'>true</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[cID (Studomes.Customer)]</local-name>
+            <parent-name>[Studomes.Customer]</parent-name>
+            <remote-alias>cID</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cName</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[cName]</local-name>
+            <parent-name>[Studomes.Customer]</parent-name>
+            <remote-alias>cName</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cContact</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[cContact]</local-name>
+            <parent-name>[Studomes.Customer]</parent-name>
+            <remote-alias>cContact</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cEmail</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[cEmail]</local-name>
+            <parent-name>[Studomes.Customer]</parent-name>
+            <remote-alias>cEmail</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[pID (Studomes.Own)]</local-name>
+            <parent-name>[Studomes.Own]</parent-name>
+            <remote-alias>pID</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>oID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[oID]</local-name>
+            <parent-name>[Studomes.Own]</parent-name>
+            <remote-alias>oID</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>oID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[oID (Studomes.Owner)]</local-name>
+            <parent-name>[Studomes.Owner]</parent-name>
+            <remote-alias>oID</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>oName</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[oName]</local-name>
+            <parent-name>[Studomes.Owner]</parent-name>
+            <remote-alias>oName</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>oOrganization</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[oOrganization]</local-name>
+            <parent-name>[Studomes.Owner]</parent-name>
+            <remote-alias>oOrganization</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>oContact</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[oContact]</local-name>
+            <parent-name>[Studomes.Owner]</parent-name>
+            <remote-alias>oContact</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>oEmail</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[oEmail]</local-name>
+            <parent-name>[Studomes.Owner]</parent-name>
+            <remote-alias>oEmail</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>oWebsite</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[oWebsite]</local-name>
+            <parent-name>[Studomes.Owner]</parent-name>
+            <remote-alias>oWebsite</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[pID (Studomes.Facilitate)]</local-name>
+            <parent-name>[Studomes.Facilitate]</parent-name>
+            <remote-alias>pID</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>oID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[oID (Studomes.Facilitate)]</local-name>
+            <parent-name>[Studomes.Facilitate]</parent-name>
+            <remote-alias>oID</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>agID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[agID]</local-name>
+            <parent-name>[Studomes.Facilitate]</parent-name>
+            <remote-alias>agID</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>agID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[agID (Studomes.Agent)]</local-name>
+            <parent-name>[Studomes.Agent]</parent-name>
+            <remote-alias>agID</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>agName</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[agName]</local-name>
+            <parent-name>[Studomes.Agent]</parent-name>
+            <remote-alias>agName</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>agContact</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[agContact]</local-name>
+            <parent-name>[Studomes.Agent]</parent-name>
+            <remote-alias>agContact</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>agEmail</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[agEmail]</local-name>
+            <parent-name>[Studomes.Agent]</parent-name>
+            <remote-alias>agEmail</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>30</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[pID (Studomes.Include)]</local-name>
+            <parent-name>[Studomes.Include]</parent-name>
+            <remote-alias>pID</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>amyID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[amyID]</local-name>
+            <parent-name>[Studomes.Include]</parent-name>
+            <remote-alias>amyID</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>3</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>amyID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[amyID (Studomes.Amenity)]</local-name>
+            <parent-name>[Studomes.Amenity]</parent-name>
+            <remote-alias>amyID</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>3</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>amyName</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[amyName]</local-name>
+            <parent-name>[Studomes.Amenity]</parent-name>
+            <remote-alias>amyName</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>20</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[pID (Studomes.Lease)]</local-name>
+            <parent-name>[Studomes.Lease]</parent-name>
+            <remote-alias>pID</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>oID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[oID (Studomes.Lease)]</local-name>
+            <parent-name>[Studomes.Lease]</parent-name>
+            <remote-alias>oID</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>cID</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[cID (Studomes.Lease)]</local-name>
+            <parent-name>[Studomes.Lease]</parent-name>
+            <remote-alias>cID</remote-alias>
+            <ordinal>54</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>10</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_CHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>leaseDuration</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[leaseDuration]</local-name>
+            <parent-name>[Studomes.Lease]</parent-name>
+            <remote-alias>leaseDuration</remote-alias>
+            <ordinal>55</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>leaseSecurityDeposit</remote-name>
+            <remote-type>3</remote-type>
+            <local-name>[leaseSecurityDeposit]</local-name>
+            <parent-name>[Studomes.Lease]</parent-name>
+            <remote-alias>leaseSecurityDeposit</remote-alias>
+            <ordinal>56</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>10</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_INTEGER&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_SLONG&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>leaseDate</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[leaseDate]</local-name>
+            <parent-name>[Studomes.Lease]</parent-name>
+            <remote-alias>leaseDate</remote-alias>
+            <ordinal>57</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_DATE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_DATE&quot;</attribute>
+              <attribute datatype='boolean' name='TypeIsDateTime2orDate'>true</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Agent Commision' datatype='real' name='[Calculation_773634033038008320]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[pRent] + (0.5 * [leaseSecurityDeposit])' />
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Ag Contact' datatype='string' name='[agContact]' role='dimension' type='nominal' />
+      <column caption='Ag Email' datatype='string' name='[agEmail]' role='dimension' type='nominal' />
+      <column caption='Ag ID' datatype='string' name='[agID]' role='dimension' type='nominal' />
+      <column caption='Ag Name' datatype='string' name='[agName]' role='dimension' type='nominal' />
+      <column caption='Amy ID' datatype='string' name='[amyID]' role='dimension' type='nominal' />
+      <column caption='Amy Name' datatype='string' name='[amyName]' role='dimension' type='nominal' />
+      <column caption='App End Date' datatype='date' name='[appEndDate]' role='dimension' type='ordinal' />
+      <column caption='App Start Date' datatype='date' name='[appStartDate]' role='dimension' type='ordinal' />
+      <column caption='C Contact' datatype='string' name='[cContact]' role='dimension' type='nominal' />
+      <column caption='C Email' datatype='string' name='[cEmail]' role='dimension' type='nominal' />
+      <column caption='C Id' datatype='string' name='[cID]' role='dimension' type='nominal' />
+      <column caption='C Name' datatype='string' name='[cName]' role='dimension' type='nominal' />
+      <column caption='Lease Date' datatype='date' name='[leaseDate]' role='dimension' type='ordinal' />
+      <column caption='Lease Duration' datatype='integer' name='[leaseDuration]' role='measure' type='quantitative' />
+      <column caption='Lease Security Deposit' datatype='integer' name='[leaseSecurityDeposit]' role='measure' type='quantitative' />
+      <column caption='O Contact' datatype='string' name='[oContact]' role='dimension' type='nominal' />
+      <column caption='O Email' datatype='string' name='[oEmail]' role='dimension' type='nominal' />
+      <column caption='O Id' datatype='string' name='[oID]' role='dimension' type='nominal' />
+      <column caption='O Name' datatype='string' name='[oName]' role='dimension' type='nominal' />
+      <column caption='O Organization' datatype='string' name='[oOrganization]' role='dimension' type='nominal' />
+      <column caption='O Website' datatype='string' name='[oWebsite]' role='dimension' type='nominal' />
+      <column caption='P Address' datatype='string' name='[pAddress]' role='dimension' type='nominal' />
+      <column caption='P Area Sq Ft' datatype='integer' name='[pAreaSqFt]' role='measure' type='quantitative' />
+      <column caption='P City' datatype='string' name='[pCity]' role='dimension' type='nominal' />
+      <column caption='P Id' datatype='string' name='[pID]' role='dimension' type='nominal' />
+      <column caption='P Name' datatype='string' name='[pName]' role='dimension' type='nominal' />
+      <column caption='P Number Of Bathroom' datatype='integer' name='[pNumberOfBathroom]' role='measure' type='quantitative' />
+      <column caption='P Number Of Bedroom' datatype='integer' name='[pNumberOfBedroom]' role='measure' type='quantitative' />
+      <column caption='P Rent' datatype='integer' name='[pRent]' role='measure' type='quantitative' />
+      <column caption='P State' datatype='string' name='[pState]' role='dimension' type='nominal' />
+      <column caption='T Category' datatype='string' name='[tCategory]' role='dimension' type='nominal' />
+      <column caption='T Id' datatype='string' name='[tID]' role='dimension' type='nominal' />
+      <column-instance column='[tCategory]' derivation='None' name='[none:tCategory:nk]' pivot='key' type='nominal' />
+      <extract count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='/Users/Abhishek/Desktop/Academics/smith_stuff/database_management_systems_lee/current_work/Studomes.Property+ (BUDT758_DB_0503_08).hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='11/27/2019 01:30:09 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <cols>
+            <map key='[agContact]' value='[Extract].[agContact]' />
+            <map key='[agEmail]' value='[Extract].[agEmail]' />
+            <map key='[agID (Studomes.Agent)]' value='[Extract].[agID]' />
+            <map key='[agID]' value='[Extract].[agID1]' />
+            <map key='[agName]' value='[Extract].[agName]' />
+            <map key='[amyID (Studomes.Amenity)]' value='[Extract].[amyID]' />
+            <map key='[amyID]' value='[Extract].[amyID1]' />
+            <map key='[amyName]' value='[Extract].[amyName]' />
+            <map key='[appEndDate]' value='[Extract].[appEndDate]' />
+            <map key='[appStartDate]' value='[Extract].[appStartDate]' />
+            <map key='[cContact]' value='[Extract].[cContact]' />
+            <map key='[cEmail]' value='[Extract].[cEmail]' />
+            <map key='[cID (Studomes.Customer)]' value='[Extract].[cID]' />
+            <map key='[cID (Studomes.Lease)]' value='[Extract].[cID1]' />
+            <map key='[cID]' value='[Extract].[cID2]' />
+            <map key='[cName]' value='[Extract].[cName]' />
+            <map key='[leaseDate]' value='[Extract].[leaseDate]' />
+            <map key='[leaseDuration]' value='[Extract].[leaseDuration]' />
+            <map key='[leaseSecurityDeposit]' value='[Extract].[leaseSecurityDeposit]' />
+            <map key='[oContact]' value='[Extract].[oContact]' />
+            <map key='[oEmail]' value='[Extract].[oEmail]' />
+            <map key='[oID (Studomes.Facilitate)]' value='[Extract].[oID]' />
+            <map key='[oID (Studomes.Lease)]' value='[Extract].[oID1]' />
+            <map key='[oID (Studomes.Owner)]' value='[Extract].[oID2]' />
+            <map key='[oID]' value='[Extract].[oID3]' />
+            <map key='[oName]' value='[Extract].[oName]' />
+            <map key='[oOrganization]' value='[Extract].[oOrganization]' />
+            <map key='[oWebsite]' value='[Extract].[oWebsite]' />
+            <map key='[pAddress]' value='[Extract].[pAddress]' />
+            <map key='[pAreaSqFt]' value='[Extract].[pAreaSqFt]' />
+            <map key='[pCity]' value='[Extract].[pCity]' />
+            <map key='[pID (Studomes.Apply)]' value='[Extract].[pID]' />
+            <map key='[pID (Studomes.Belong)]' value='[Extract].[pID1]' />
+            <map key='[pID (Studomes.Facilitate)]' value='[Extract].[pID2]' />
+            <map key='[pID (Studomes.Include)]' value='[Extract].[pID3]' />
+            <map key='[pID (Studomes.Lease)]' value='[Extract].[pID4]' />
+            <map key='[pID (Studomes.Own)]' value='[Extract].[pID5]' />
+            <map key='[pID]' value='[Extract].[pID6]' />
+            <map key='[pName]' value='[Extract].[pName]' />
+            <map key='[pNumberOfBathroom]' value='[Extract].[pNumberOfBathroom]' />
+            <map key='[pNumberOfBedroom]' value='[Extract].[pNumberOfBedroom]' />
+            <map key='[pRent]' value='[Extract].[pRent]' />
+            <map key='[pState]' value='[Extract].[pState]' />
+            <map key='[tCategory]' value='[Extract].[tCategory]' />
+            <map key='[tID (Studomes.Type)]' value='[Extract].[tID]' />
+            <map key='[tID]' value='[Extract].[tID1]' />
+          </cols>
+          <refresh>
+            <refresh-event add-from-file-path='Studomes.Property+ (BUDT758_DB_0503_08)' increment-value='%null%' refresh-type='create' rows-inserted='105' timestamp-start='2019-11-27 01:30:09.846' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>pID6</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[pID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>pID6</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Studomes.Property</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>22</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>pName</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[pName]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>pName</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Studomes.Property</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>pAddress</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[pAddress]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>pAddress</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Studomes.Property</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>21</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>pCity</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[pCity]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>pCity</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Studomes.Property</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>pState</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[pState]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>pState</remote-alias>
+              <ordinal>4</ordinal>
+              <family>Studomes.Property</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>pRent</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[pRent]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>pRent</remote-alias>
+              <ordinal>5</ordinal>
+              <family>Studomes.Property</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>17</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>pNumberOfBedroom</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[pNumberOfBedroom]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>pNumberOfBedroom</remote-alias>
+              <ordinal>6</ordinal>
+              <family>Studomes.Property</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>pNumberOfBathroom</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[pNumberOfBathroom]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>pNumberOfBathroom</remote-alias>
+              <ordinal>7</ordinal>
+              <family>Studomes.Property</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>pAreaSqFt</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[pAreaSqFt]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>pAreaSqFt</remote-alias>
+              <ordinal>8</ordinal>
+              <family>Studomes.Property</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>15</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>pID1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[pID (Studomes.Belong)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>pID1</remote-alias>
+              <ordinal>9</ordinal>
+              <family>Studomes.Belong</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>21</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>tID1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[tID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>tID1</remote-alias>
+              <ordinal>10</ordinal>
+              <family>Studomes.Belong</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>tID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[tID (Studomes.Type)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>tID</remote-alias>
+              <ordinal>11</ordinal>
+              <family>Studomes.Type</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>tCategory</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[tCategory]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>tCategory</remote-alias>
+              <ordinal>12</ordinal>
+              <family>Studomes.Type</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>pID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[pID (Studomes.Apply)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>pID</remote-alias>
+              <ordinal>13</ordinal>
+              <family>Studomes.Apply</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>cID2</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[cID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>cID2</remote-alias>
+              <ordinal>14</ordinal>
+              <family>Studomes.Apply</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>appStartDate</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[appStartDate]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>appStartDate</remote-alias>
+              <ordinal>15</ordinal>
+              <family>Studomes.Apply</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>appEndDate</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[appEndDate]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>appEndDate</remote-alias>
+              <ordinal>16</ordinal>
+              <family>Studomes.Apply</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>cID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[cID (Studomes.Customer)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>cID</remote-alias>
+              <ordinal>17</ordinal>
+              <family>Studomes.Customer</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>cName</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[cName]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>cName</remote-alias>
+              <ordinal>18</ordinal>
+              <family>Studomes.Customer</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>cContact</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[cContact]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>cContact</remote-alias>
+              <ordinal>19</ordinal>
+              <family>Studomes.Customer</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>cEmail</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[cEmail]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>cEmail</remote-alias>
+              <ordinal>20</ordinal>
+              <family>Studomes.Customer</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>pID5</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[pID (Studomes.Own)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>pID5</remote-alias>
+              <ordinal>21</ordinal>
+              <family>Studomes.Own</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>21</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>oID3</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[oID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>oID3</remote-alias>
+              <ordinal>22</ordinal>
+              <family>Studomes.Own</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>oID2</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[oID (Studomes.Owner)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>oID2</remote-alias>
+              <ordinal>23</ordinal>
+              <family>Studomes.Owner</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>oName</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[oName]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>oName</remote-alias>
+              <ordinal>24</ordinal>
+              <family>Studomes.Owner</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>oOrganization</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[oOrganization]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>oOrganization</remote-alias>
+              <ordinal>25</ordinal>
+              <family>Studomes.Owner</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>oContact</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[oContact]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>oContact</remote-alias>
+              <ordinal>26</ordinal>
+              <family>Studomes.Owner</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>oEmail</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[oEmail]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>oEmail</remote-alias>
+              <ordinal>27</ordinal>
+              <family>Studomes.Owner</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>oWebsite</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[oWebsite]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>oWebsite</remote-alias>
+              <ordinal>28</ordinal>
+              <family>Studomes.Owner</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>pID2</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[pID (Studomes.Facilitate)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>pID2</remote-alias>
+              <ordinal>29</ordinal>
+              <family>Studomes.Facilitate</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>oID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[oID (Studomes.Facilitate)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>oID</remote-alias>
+              <ordinal>30</ordinal>
+              <family>Studomes.Facilitate</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>agID1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[agID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>agID1</remote-alias>
+              <ordinal>31</ordinal>
+              <family>Studomes.Facilitate</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>agID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[agID (Studomes.Agent)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>agID</remote-alias>
+              <ordinal>32</ordinal>
+              <family>Studomes.Agent</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>agName</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[agName]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>agName</remote-alias>
+              <ordinal>33</ordinal>
+              <family>Studomes.Agent</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>agContact</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[agContact]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>agContact</remote-alias>
+              <ordinal>34</ordinal>
+              <family>Studomes.Agent</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>agEmail</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[agEmail]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>agEmail</remote-alias>
+              <ordinal>35</ordinal>
+              <family>Studomes.Agent</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>pID3</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[pID (Studomes.Include)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>pID3</remote-alias>
+              <ordinal>36</ordinal>
+              <family>Studomes.Include</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>amyID1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[amyID]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>amyID1</remote-alias>
+              <ordinal>37</ordinal>
+              <family>Studomes.Include</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>12</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>amyID</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[amyID (Studomes.Amenity)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>amyID</remote-alias>
+              <ordinal>38</ordinal>
+              <family>Studomes.Amenity</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>amyName</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[amyName]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>amyName</remote-alias>
+              <ordinal>39</ordinal>
+              <family>Studomes.Amenity</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>14</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>pID4</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[pID (Studomes.Lease)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>pID4</remote-alias>
+              <ordinal>40</ordinal>
+              <family>Studomes.Lease</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>8</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>oID1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[oID (Studomes.Lease)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>oID1</remote-alias>
+              <ordinal>41</ordinal>
+              <family>Studomes.Lease</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>cID1</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[cID (Studomes.Lease)]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>cID1</remote-alias>
+              <ordinal>42</ordinal>
+              <family>Studomes.Lease</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>4</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>leaseDuration</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[leaseDuration]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>leaseDuration</remote-alias>
+              <ordinal>43</ordinal>
+              <family>Studomes.Lease</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>leaseSecurityDeposit</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[leaseSecurityDeposit]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>leaseSecurityDeposit</remote-alias>
+              <ordinal>44</ordinal>
+              <family>Studomes.Lease</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>leaseDate</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[leaseDate]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>leaseDate</remote-alias>
+              <ordinal>45</ordinal>
+              <family>Studomes.Lease</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>9</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.543307' measure-ordering='alphabetic' measure-percentage='0.456693' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:tCategory:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Apartment&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;House&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Penthouse&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Condo&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;Townhome&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Luxury&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Agent Commision Information'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontsize='12'>How many properties, facilitated by agent have successsfully translated into lease along with income earned by the agent for facilitating it?</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Studomes.Property+ (BUDT758_DB_0503_08)' name='federated.1l40j2e14uf5ww1bdur9x1y7jyx5' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1l40j2e14uf5ww1bdur9x1y7jyx5'>
+            <column caption='Ag Name' datatype='string' name='[agName]' role='dimension' type='nominal' />
+            <column-instance column='[pID (Studomes.Facilitate)]' derivation='CountD' name='[ctd:pID (Studomes.Facilitate):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[agName]' derivation='None' name='[none:agName:nk]' pivot='key' type='nominal' />
+            <column datatype='string' name='[pID (Studomes.Facilitate)]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[none:agName:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:agName:nk]' />
+              <groupfilter function='member' level='[none:agName:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[none:agName:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[ctd:pID (Studomes.Facilitate):qk]' palette='tableau-map-blue-green' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[ctd:pID (Studomes.Facilitate):qk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[ctd:pID (Studomes.Facilitate):qk]</rows>
+        <cols>[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[none:agName:nk]</cols>
+      </table>
+      <simple-id uuid='{583DA882-50DA-4B69-8715-241C2573F208}' />
+    </worksheet>
+    <worksheet name='Avg Rent by Category'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontcolor='#000000' fontsize='12'>What are the number of properties on each type(category) along with average rent?</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Studomes.Property+ (BUDT758_DB_0503_08)' name='federated.1l40j2e14uf5ww1bdur9x1y7jyx5' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1l40j2e14uf5ww1bdur9x1y7jyx5'>
+            <column-instance column='[pRent]' derivation='Avg' name='[avg:pRent:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[pID (Studomes.Belong)]' derivation='CountD' name='[ctd:pID (Studomes.Belong):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[tCategory]' derivation='None' name='[none:tCategory:nk]' pivot='key' type='nominal' />
+            <column datatype='string' name='[pID (Studomes.Belong)]' role='dimension' type='nominal' />
+            <column caption='P Rent' datatype='integer' name='[pRent]' role='measure' type='quantitative' />
+            <column caption='T Category' datatype='string' name='[tCategory]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[none:tCategory:nk]'>
+            <groupfilter function='except' user:ui-domain='database' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:tCategory:nk]' />
+              <groupfilter function='member' level='[none:tCategory:nk]' member='%null%' />
+            </groupfilter>
+          </filter>
+          <computed-sort column='[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[none:tCategory:nk]' direction='ASC' using='[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[ctd:pID (Studomes.Belong):qk]' />
+          <slices>
+            <column>[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[none:tCategory:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='size-bar' field='[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[avg:pRent:qk]' field-type='quantitative' max-size='1' min-size='0.005' type='centersize' />
+            <encoding attr='color' field='[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[avg:pRent:qk]' palette='tableau-map-temperatur' type='interpolated' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='stroke-color' id='refline0' value='#000000' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='on' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[avg:pRent:qk]' />
+              <color column='[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[avg:pRent:qk]' />
+              <text column='[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[none:tCategory:nk]' />
+              <text column='[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[ctd:pID (Studomes.Belong):qk]' />
+              <text column='[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[avg:pRent:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+      <simple-id uuid='{86F5CDE4-B2DF-40DD-93A2-11CA8662407A}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='Dashboard 1'>
+      <style />
+      <size maxheight='800' maxwidth='1000' minheight='800' minwidth='1000' />
+      <zones>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='63125' id='5' param='horz' type='layout-flow' w='98400' x='800' y='1000'>
+            <zone fixed-size='492' h='63125' id='1' is-fixed='true' param='vert' type='layout-flow' w='49200' x='800' y='1000'>
+              <zone fixed-size='510' h='63125' id='3' is-fixed='true' name='Avg Rent by Category' w='49200' x='800' y='1000'>
+                <layout-cache fixed-size-w='484' type-h='fixed' type-w='fixed' />
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone h='63125' id='7' name='Agent Commision Information' w='49195' x='50000' y='1000'>
+              <layout-cache minheight='295' type-h='scalable' type-w='cell' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+          </zone>
+          <zone h='34875' id='8' name='Agent Commision Information' pane-specification-id='0' param='[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[ctd:pID (Studomes.Facilitate):qk]' type='color' w='50900' x='48300' y='64125'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone h='34875' id='6' name='Avg Rent by Category' pane-specification-id='0' param='[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[avg:pRent:qk]' type='color' w='47500' x='800' y='64125'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='4' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='750' minheight='750' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='16' type='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98000' id='15' param='vert' type='layout-flow' w='98400' x='800' y='1000'>
+                <zone fixed-size='280' h='63125' id='3' is-fixed='true' name='Avg Rent by Category' w='49200' x='800' y='1000'>
+                  <layout-cache fixed-size-w='484' type-h='fixed' type-w='fixed' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='34875' id='6' name='Avg Rent by Category' pane-specification-id='0' param='[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[avg:pRent:qk]' type='color' w='47500' x='800' y='64125'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='63125' id='7' is-fixed='true' name='Agent Commision Information' w='49195' x='50000' y='1000'>
+                  <layout-cache minheight='295' type-h='scalable' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='34875' id='8' name='Agent Commision Information' pane-specification-id='0' param='[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[ctd:pID (Studomes.Facilitate):qk]' type='color' w='50900' x='48300' y='64125'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{F3C39A6B-B911-4662-A542-C7CB8DA3891F}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Avg Rent by Category'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[avg:pRent:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[:Measure Names]</field>
+            <field>[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[avg:pRent:qk]</field>
+            <field>[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[none:pID (Studomes.Belong):nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{D1457E20-1CE4-4CE9-ADC0-D2AD273D53EB}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Agent Commision Information'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[ctd:pID (Studomes.Facilitate):qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <node-selection select-tuples='false'>
+            <oriented-node-reference orientation='horizontal'>
+              <node-reference>
+                <fields>
+                  <field>[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[none:agName:nk]</field>
+                </fields>
+                <multibucket>
+                  <bucket>%null%</bucket>
+                </multibucket>
+              </node-reference>
+              <page-reference />
+            </oriented-node-reference>
+          </node-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[ctd:pID (Studomes.Facilitate):qk]</field>
+            <field>[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[none:agID:nk]</field>
+            <field>[federated.1l40j2e14uf5ww1bdur9x1y7jyx5].[none:pID (Studomes.Lease):nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{45ECAACA-B2EF-437D-8B66-7387DD6FADB2}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Agent Commision Information'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Avg Rent by Category' />
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{67A55DEF-5AA6-41B1-8B02-CCBF2AB3DD6C}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Agent Commision Information' width='192'>
+      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
+      rkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='Avg Rent by Category' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Dashboard 1' width='192'>
+      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
+      pAAkjub/A5xm+CzbM7WtAAAAAElFTkSuQmCC
+    </thumbnail>
+  </thumbnails>
+</workbook>
